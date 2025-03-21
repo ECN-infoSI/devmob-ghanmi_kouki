@@ -53,11 +53,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyApp() {
     Scaffold(
-        topBar = { TopBar() }, // Affiche la barre supérieure (TopAppBar)
-        bottomBar = { BottomNavigationBar() } // Affiche la barre de navigation inférieure
-    ) { paddingValues -> // Fournit un espace de remplissage pour éviter que le contenu ne soit caché sous les barres
+        topBar = { TopBar() },
+        bottomBar = { BottomNavigationBar() }
+    ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
-            HomeScreen() // Affiche l'écran principal de l'application
+            HomeScreen()
         }
     }
 }
@@ -137,7 +137,8 @@ fun TransportIcon(iconRes: Int) {
         Image(
             painter = painterResource(id = iconRes),
             contentDescription = "Transport",
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
+            colorFilter = null
         )
     }
 }
@@ -170,7 +171,7 @@ fun BottomNavigationBar() {
         contentColor = Color.Black
     ) {
         NavigationBarItem(
-            icon = { Icon(painterResource(id = R.drawable.ic_explore), contentDescription = "Explore") },
+            icon = { Icon(painterResource(id = R.drawable.ic_explore), contentDescription = "Explore", tint = Color.Unspecified) },
             selected = false,
             onClick = { /* TODO: Navigate */ }
         )
