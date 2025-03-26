@@ -17,7 +17,7 @@ fun BottomNavigationBar(navController: NavController) {
     NavigationBar(containerColor = Color(0xFFF0EAF2), contentColor = Color.Black) {
         screens.forEach { screen ->
             NavigationBarItem(
-                icon = { Icon(painterResource(id = screen.icon), contentDescription = screen.title) },
+                icon = { Icon(painterResource(id = screen.icon), contentDescription = screen.title, tint = Color.Unspecified) },
                 label = { Text(screen.title) },
                 selected = currentRoute == screen.route,
                 onClick = {
